@@ -1,0 +1,36 @@
+const config = {
+  basePath: '/realoq-ui/',
+  home: '/realoq-ui/home',
+  sso: {
+    oauthUri: '{{getenv "SSO_URL"}}',
+  },
+  dev: {
+    server: {
+      base_url: '/api',
+      queryParams: '?offset=1&limit=10&sort=-name',
+      realoq_be: '{{getenv "BE_IP_PORT"}}',
+    },
+    apiConfig: {
+      login: {
+        href: '/api/token'
+      },
+      signup: {
+        href: '/accounts/register'
+      },
+      search: {
+        href: '/search/sample'
+      },
+      count: {
+        href: '/search/count'
+      },
+    }
+  }
+};
+var window;
+if (window) {
+  window.REALOQ_CONFIG = config;
+}
+var module;
+if (module) {
+  module.exports = config;
+}

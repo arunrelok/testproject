@@ -1,0 +1,4 @@
+[template]
+src = "config.js.tmpl"
+dest = "/usr/share/nginx/html/realoq-ui/config.js"
+mode = "0555"
